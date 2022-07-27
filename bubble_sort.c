@@ -1,29 +1,65 @@
 #include <stdio.h>
+
+void printArray(int *A, int n)
+{
+     for (int i = 0; i < n; i++)
+     {
+          printf("%d ", A[i]);
+     }
+     printf("\n");
+}
+void bubbleSort(int *A, int n)
+{
+     int temp;
+     int isSorted = 0;
+     for (int i = 0; i < n - 1; i++) // For number of pass
+     {
+          printf("Working on pass number %d\n", i + 1);
+          for (int j = 0; j < n - 1 - i; j++) // For comparison in each pass
+          {
+               if (A[j] > A[j + 1])
+               {
+                    temp = A[j];
+                    A[j] = A[j + 1];
+                    A[j + 1] = temp;
+               }
+          }
+     }
+}
+
+void bubbleSortAdaptive(int *A, int n)
+{
+     int temp;
+     int isSorted = 0;
+     for (int i = 0; i < n - 1; i++) // For number of pass
+     {
+          printf("Working on pass number %d\n", i + 1);
+          isSorted = 1;
+          for (int j = 0; j < n - 1 - i; j++) // For comparison in each pass
+          {
+               if (A[j] > A[j + 1])
+               {
+                    temp = A[j];
+                    A[j] = A[j + 1];
+                    A[j + 1] = temp;
+                    isSorted = 0;
+               }
+          }
+          if (isSorted)
+          {
+               return;
+          }
+     }
+}
+
 int main()
 {
-    int temp,flag = 0;
-    int arr[] = {7, 11, 9, 2, 17, 4};
-    for (int i = 0; i < 5; i++)
-    {
-        for (int k = 0; k < 5 - i; k++)
-        {
-            if (arr[k] > arr[k + 1])
-            {
-                temp = arr[k];
-                arr[k] = arr[k + 1];
-                arr[k + 1] = temp;
-                flag = 1;
-            }
-        }
-        // IF no two elements were swapped by inner loop, then break
-        if (flag==0)
-        {
-            break;
-        }
-    }
-    for (int j = 0; j < 6; j++)
-    {
-        printf("%d ", arr[j]);
-    }
-    return 0;
+     // int A[] = {12, 54, 65, 7, 23, 9};
+     int A[] = {1, 2, 5, 6, 12, 54, 625, 7, 23, 9, 987};
+     // int A[] = {1, 2, 3, 4, 5, 6};
+     int n = 11;
+     printArray(A, n); // Printing the array before sorting
+     bubbleSort(A, n); // Function to sort the array
+     printArray(A, n); // Printing the array before sorting
+     return 0;
 }
