@@ -27,6 +27,7 @@ void show(struct myArray *a){
 
 void setval(struct myArray *a){
     int n;
+//     for 2nd
     for (int i = 0; i < a->used_size; i++)
     {
         printf("Enter element %d: ",i);
