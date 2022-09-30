@@ -24,6 +24,10 @@ struct node* create(){
      printf("Enter data : (-1 for blank)");
      scanf("%d",&c);
 //      if
+     if (c==-1)
+     {
+          return 0;
+     }
      
      newnode->data=c;
      printf("Enter left child of %d : ",c);
