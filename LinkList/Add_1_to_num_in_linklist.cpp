@@ -27,6 +27,11 @@ public:
                     newhead = temp = new_node;
                }
 //                else 2nd
+               else
+               {
+                    temp->next = new_node;
+               }
+               num /= 10;
                
           }
           return newhead;
