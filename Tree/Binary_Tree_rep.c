@@ -23,10 +23,8 @@ struct node* create(){
      newnode=(struct node*)malloc(sizeof(struct node));
      printf("Enter data : (-1 for blank)");
      scanf("%d",&c);
-     if (c==-1)
-     {
-          return 0;
-     }
+//      if
+     
      newnode->data=c;
      printf("Enter left child of %d : ",c);
      newnode->left=create();
