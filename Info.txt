@@ -1,0 +1,23 @@
+Recommendation System - 3 types
+
+
+
+1->   Contant Based
+
+2->   Collaboration Filtring
+
+3->   Hybrid 
+
+
+In this project we will use contant based recommendation System
+
+
+
+
+
+
+
+
+
+
+
